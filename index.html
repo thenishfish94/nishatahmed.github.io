@@ -7,7 +7,7 @@
   <meta name="description" content="Nishat Ahmed is an award-winning Bangladeshi-American poet, content strategist, and creative based in Chicago.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after {
       box-sizing: border-box;
@@ -25,8 +25,8 @@
       --text-primary: #1e1e18;
       --text-body: #2a2820;
       --text-muted: #7a7060;
-      --font-display: 'Cormorant Garamond', Georgia, serif;
-      --font-body: 'Cormorant Garamond', Georgia, serif;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'Source Serif 4', Georgia, serif;
       --font-ui: 'Inter', system-ui, sans-serif;
     }
 
@@ -105,21 +105,38 @@
       min-height: 580px;
     }
 
-   .hero-photo {
+    .hero-photo {
       overflow: hidden;
-      background: #b8b8b8;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      background: var(--parchment-mid);
     }
 
     .hero-photo img {
-      width: 85%;
-      height: 85%;
-      object-fit: contain;
-      object-position: center center;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
       display: block;
-      margin: auto;
+    }
+
+    .hero-photo-placeholder {
+      width: 100%;
+      height: 100%;
+      min-height: 580px;
+      background: #b8c4aa;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .hero-photo-placeholder span {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #3a4a32;
+      opacity: 0.6;
     }
 
     .hero-text {
@@ -596,7 +613,14 @@
   <!-- HERO -->
   <section class="hero" aria-label="Introduction">
     <div class="hero-photo">
-     <img src="nish.png" alt="Nishat Ahmed">
+      <!-- Replace the placeholder below with your actual photo:
+           1. Save your photo as "nish.jpg" in the same folder as this file
+           2. Delete the div.hero-photo-placeholder
+           3. Uncomment the img tag below -->
+      <!-- <img src="nish.jpg" alt="Nishat Ahmed"> -->
+      <div class="hero-photo-placeholder" aria-hidden="true">
+        <span>Your photo here</span>
+      </div>
     </div>
     <div class="hero-text">
       <p class="hero-eyebrow">Poet &middot; Writer &middot; Strategist</p>
@@ -725,7 +749,9 @@
     <div class="section-label" id="contact-heading">Contact</div>
     <div>
       <p class="contact-intro">Available for bookings, commissions, collaborations, and whatever else you might need. Get in touch.</p>
-      <form class="contact-form" action="https://formspree.io/f/Ymqevqyge" method="POST">
+      <!-- FORMSPREE: Replace YOUR_FORM_ID below with your actual Formspree form ID -->
+      <!-- Sign up free at formspree.io, create a new form, and paste the ID here -->
+      <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
         <div class="form-row">
           <input type="text" name="name" placeholder="Your name" required>
           <input type="email" name="email" placeholder="Your email" required>
@@ -741,12 +767,10 @@
   <footer class="footer" role="contentinfo">
     <div class="footer-logo">Nishat Ahmed</div>
     <ul class="footer-links">
-      <li><a href="mailto:nishatahmed94@gmail.com">Email</a></li>
+      <li><a href="mailto:nishatahmedpoetry@gmail.com">Email</a></li>
       <li><a href="https://www.linkedin.com/in/nishat-ahmed-writer/" target="_blank" rel="noopener">LinkedIn</a></li>
       <li><a href="http://instagram.com/thenishfish" target="_blank" rel="noopener">Instagram</a></li>
-      <li><a href="https://midwesternhaikus.beehiiv.com/" target="_blank" rel="noopener">My Newsletter</a></li>
-      <li><a href="https://linktr.ee/tenmonthsummer" target="_blank" rel="noopener">tenmonthsummer</a></li>
-      
+      <li><a href="https://medium.com/@thenishfish" target="_blank" rel="noopener">Medium</a></li>
     </ul>
     <div class="footer-copy">&copy; 2026 Nishat Ahmed</div>
   </footer>

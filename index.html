@@ -105,38 +105,21 @@
       min-height: 580px;
     }
 
-    .hero-photo {
+  .hero-photo {
       overflow: hidden;
-      background: var(--parchment-mid);
+      background: #b8b8b8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .hero-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top center;
+      width: 85%;
+      height: 85%;
+      object-fit: contain;
+      object-position: center center;
       display: block;
-    }
-
-    .hero-photo-placeholder {
-      width: 100%;
-      height: 100%;
-      min-height: 580px;
-      background: #b8c4aa;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-    }
-
-    .hero-photo-placeholder span {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: #3a4a32;
-      opacity: 0.6;
+      margin: auto;
     }
 
     .hero-text {
@@ -613,14 +596,7 @@
   <!-- HERO -->
   <section class="hero" aria-label="Introduction">
     <div class="hero-photo">
-      <!-- Replace the placeholder below with your actual photo:
-           1. Save your photo as "nish.jpg" in the same folder as this file
-           2. Delete the div.hero-photo-placeholder
-           3. Uncomment the img tag below -->
-      <!-- <img src="nish.jpg" alt="Nishat Ahmed"> -->
-      <div class="hero-photo-placeholder" aria-hidden="true">
-        <span>Your photo here</span>
-      </div>
+      <img src="nish.png" alt="Nishat Ahmed">
     </div>
     <div class="hero-text">
       <p class="hero-eyebrow">Poet &middot; Writer &middot; Strategist</p>
@@ -767,10 +743,12 @@
   <footer class="footer" role="contentinfo">
     <div class="footer-logo">Nishat Ahmed</div>
     <ul class="footer-links">
-      <li><a href="mailto:nishatahmedpoetry@gmail.com">Email</a></li>
+      <li><a href="mailto:nishatahmed94@gmail.com">Email</a></li>
       <li><a href="https://www.linkedin.com/in/nishat-ahmed-writer/" target="_blank" rel="noopener">LinkedIn</a></li>
       <li><a href="http://instagram.com/thenishfish" target="_blank" rel="noopener">Instagram</a></li>
-      <li><a href="https://medium.com/@thenishfish" target="_blank" rel="noopener">Medium</a></li>
+      <li><a href="https://midwesternhaikus.beehiiv.com/" target="_blank" rel="noopener">My Newsletter</a></li>
+      <li><a href="https://linktr.ee/tenmonthsummer" target="_blank" rel="noopener">tenmonthsummer</a></li>
+
     </ul>
     <div class="footer-copy">&copy; 2026 Nishat Ahmed</div>
   </footer>

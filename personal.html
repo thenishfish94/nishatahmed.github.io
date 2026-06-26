@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Portfolio — Nishat Ahmed</title>
+  <meta name="description" content="The creative world of Nishat Ahmed — poet, musician, workshop facilitator, and TEDx speaker based in Chicago.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green: #006A4E;
+      --green-dark: #00503a;
+      --red: #DA291C;
+      --parchment: #f5f0e8;
+      --parchment-mid: #e8e2d4;
+      --rule: #c5bfaa;
+      --text-primary: #1e1e18;
+      --text-body: #2a2820;
+      --text-muted: #7a7060;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'Source Serif 4', Georgia, serif;
+      --font-ui: 'Inter', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-ui);
+      background: var(--parchment);
+      color: var(--text-primary);
+      line-height: 1.6;
+    }
+
+    a { color: var(--red); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── NAV ── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--parchment);
+      border-bottom: 0.5px solid var(--rule);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 48px;
+    }
+
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+
+    .nav-logo:hover { text-decoration: none; color: var(--green); }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 32px;
+    }
+
+    .nav-links a {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-body);
+      text-decoration: none;
+    }
+
+    .nav-links a:hover { color: var(--red); text-decoration: none; }
+    .nav-links a.active { color: var(--green); }
+
+    hr.rule { border: none; border-top: 0.5px solid var(--rule); }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--green);
+    }
+
+    /* ── PAGE HEADER ── */
+    .page-header {
+      padding: 72px 48px 56px;
+      border-bottom: 0.5px solid var(--rule);
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 48px;
+      align-items: end;
+    }
+
+    .page-title {
+      font-family: var(--font-display);
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 1.05;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+
+    .page-title em { font-style: italic; color: var(--green); }
+
+    .page-intro {
+      font-family: var(--font-body);
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.8;
+      color: var(--text-body);
+      max-width: 600px;
+    }
+
+    /* ── POETRY ── */
+    .poetry {
+      padding: 72px 48px;
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 48px;
+    }
+
+    .poetry-body {
+      font-family: var(--font-body);
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.85;
+      color: var(--text-body);
+      margin-bottom: 40px;
+    }
+
+    .poetry-body p + p { margin-top: 1.2em; }
+
+    .books-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      margin-bottom: 32px;
+    }
+
+    .book-card {
+      background: var(--parchment-mid);
+      padding: 28px;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .book-spine {
+      width: 64px;
+      height: 88px;
+      background: var(--green);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px;
+    }
+
+    .book-spine-2 { background: var(--green-dark); }
+
+    .book-spine span {
+      font-family: var(--font-display);
+      font-size: 9px;
+      font-style: italic;
+      color: #c0d8c0;
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    .book-meta { flex: 1; }
+
+    .book-title {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-style: italic;
+      font-weight: 500;
+      color: var(--text-primary);
+      margin-bottom: 5px;
+      line-height: 1.3;
+    }
+
+    .book-press {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+
+    .book-card a {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--red);
+      border-bottom: 1px solid var(--red);
+      padding-bottom: 1px;
+    }
+
+    .award-item {
+      padding: 20px 0;
+      border-top: 0.5px solid var(--rule);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 24px;
+    }
+
+    .award-name {
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--text-body);
+    }
+
+    .award-year {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    /* ── MUSIC ── */
+    .music {
+      background: var(--parchment-mid);
+      padding: 72px 48px;
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 48px;
+    }
+
+    .music-body {
+      font-family: var(--font-body);
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.85;
+      color: var(--text-body);
+      margin-bottom: 36px;
+    }
+
+    .music-body p + p { margin-top: 1.2em; }
+
+    .bands-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+    }
+
+    .band-card {
+      background: var(--parchment);
+      padding: 28px;
+    }
+
+    .band-name {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 700;
+      font-style: italic;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .band-years {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 14px;
+    }
+
+    .band-desc {
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.75;
+      color: var(--text-body);
+      margin-bottom: 18px;
+    }
+
+    .band-venues {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .band-venue {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-muted);
+      padding-left: 12px;
+      position: relative;
+    }
+
+    .band-venue::before {
+      content: '·';
+      position: absolute;
+      left: 0;
+      color: var(--green);
+    }
+
+    .band-link {
+      display: inline-block;
+      margin-top: 16px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--red);
+      border-bottom: 1px solid var(--red);
+      padding-bottom: 1px;
+    }
+
+    /* ── WORKSHOPS ── */
+    .workshops {
+      padding: 72px 48px;
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 48px;
+    }
+
+    .workshop-feature {
+      background: var(--green);
+      padding: 40px;
+      margin-bottom: 2px;
+    }
+
+    .workshop-title {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 700;
+      font-style: italic;
+      color: #e8f4ee;
+      margin-bottom: 16px;
+    }
+
+    .workshop-body {
+      font-family: var(--font-body);
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.8;
+      color: #c0d8c0;
+      margin-bottom: 28px;
+    }
+
+    .workshop-link {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #e8f4ee;
+      border-bottom: 1px solid #a8d4c0;
+      padding-bottom: 2px;
+    }
+
+    /* ── TEDX ── */
+    .tedx {
+      background: var(--parchment-mid);
+      padding: 72px 48px;
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 48px;
+    }
+
+    .tedx-feature {
+      display: flex;
+      gap: 36px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .tedx-text { flex: 1; min-width: 260px; }
+
+    .tedx-title {
+      font-family: var(--font-display);
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+
+    .tedx-body {
+      font-family: var(--font-body);
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.8;
+      color: var(--text-body);
+      margin-bottom: 20px;
+    }
+
+    .tedx-link {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--red);
+      border-bottom: 1px solid var(--red);
+      padding-bottom: 1px;
+    }
+
+    .tedx-badge {
+      background: var(--parchment);
+      padding: 24px 28px;
+      border-left: 3px solid var(--red);
+      align-self: flex-start;
+      min-width: 200px;
+    }
+
+    .tedx-badge-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 6px;
+    }
+
+    .tedx-badge-name {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    /* ── CTA ── */
+    .cta-strip {
+      background: var(--green);
+      padding: 56px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+
+    .cta-text {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 700;
+      font-style: italic;
+      color: #e8f4ee;
+    }
+
+    .btn {
+      display: inline-block;
+      font-family: var(--font-ui);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 13px 24px;
+      cursor: pointer;
+      transition: opacity 0.15s;
+      text-decoration: none;
+    }
+
+    .btn:hover { opacity: 0.85; text-decoration: none; }
+
+    .btn-light {
+      background: var(--parchment);
+      color: var(--green);
+      border: 1.5px solid var(--parchment);
+    }
+
+    .btn-outline-light {
+      background: transparent;
+      color: #e8f4ee;
+      border: 1.5px solid #a8d4c0;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: #1a2a22;
+      padding: 32px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-logo {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-style: italic;
+      font-weight: 500;
+      color: #7aaa8a;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #7aaa8a;
+      text-decoration: none;
+    }
+
+    .footer-links a:hover { color: var(--red); text-decoration: none; }
+    .footer-copy { font-size: 11px; color: #4a6a54; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .nav { padding: 16px 24px; }
+      .nav-links { gap: 18px; }
+
+      .page-header,
+      .poetry,
+      .music,
+      .workshops,
+      .tedx { grid-template-columns: 1fr; gap: 24px; padding: 48px 24px; }
+
+      .page-title { font-size: 36px; }
+      .books-grid { grid-template-columns: 1fr; }
+      .bands-grid { grid-template-columns: 1fr; }
+      .tedx-feature { flex-direction: column; }
+      .cta-strip { padding: 40px 24px; flex-direction: column; align-items: flex-start; }
+      .footer { padding: 24px; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <a class="nav-logo" href="index.html">Nishat Ahmed</a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="professional.html">Professional</a></li>
+      <li><a href="personal.html" class="active">Personal</a></li>
+      <li><a href="index.html#books">Books</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header">
+    <div class="section-label">Personal</div>
+    <div>
+      <h1 class="page-title">The hand<br><em>behind the pen.</em></h1>
+      <p class="page-intro">Poet, musician, bleeding-heart yearner.</p>
+    </div>
+  </header>
+
+  <!-- POETRY -->
+  <section class="poetry" aria-labelledby="poetry-heading">
+    <div class="section-label" id="poetry-heading">Poetry</div>
+    <div>
+      <div class="poetry-body">
+        <p>Nishat's poetry is rooted in his MFA thesis "Pangea" — directed by former Poet Laureate of Virginia Tim Seibles — which unpacks cycles of grief and violence in Bangladesh during its independence war, and how those cycles echo in the current American landscape.</p>
+        <p>With a focus in (but not limited to) poetry, his writing falls at the intersections of grief, race, trauma, mental health, loss, love, and music. He was the recipient of the 2018 ODU–Poetry Society of Virginia–Academy of American Poets College Poetry Prize.</p>
+      </div>
+
+      <div class="books-grid">
+        <div class="book-card">
+          <img src="field-guide-cover.jpg" alt="Field Guide for End Days cover" style="width: 68px; height: 92px; object-fit: cover; flex-shrink: 0;">
+          <div class="book-meta">
+            <div class="book-title">Field Guide for End Days</div>
+            <div class="book-press">Finishing Line Press · 2020</div>
+            <a href="https://www.indiebound.org/book/9781646622269" target="_blank" rel="noopener">Order now &rarr;</a>
+          </div>
+        </div>
+        <div class="book-card">
+          <img src="brown-boy-cover.jpg" alt="Brown Boy cover" style="width: 68px; height: 92px; object-fit: cover; flex-shrink: 0;">
+          <div class="book-meta">
+            <div class="book-title">Brown Boy</div>
+            <div class="book-press">Porkbelly Press</div>
+            <a href="https://porkbellypress.com/poetry/brown" target="_blank" rel="noopener">Order now &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="award-item">
+        <div class="award-name">2018 ODU–Poetry Society of Virginia–Academy of American Poets College Poetry Prize</div>
+        <div class="award-year">2018</div>
+      </div>
+      <div class="award-item">
+        <div class="award-name">Perry Morgan Fellowship — Full Tuition, Old Dominion University</div>
+        <div class="award-year">2016</div>
+      </div>
+      <div class="award-item">
+        <div class="award-name">David Scott Sutelan Memorial Scholarship for Exceptional Merit</div>
+        <div class="award-year">2019</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- MUSIC -->
+  <section class="music" aria-labelledby="music-heading">
+    <div class="section-label" id="music-heading">Music</div>
+    <div>
+      <div class="music-body">
+        <p>Nishat's passion for music — specifically pop-punk and emo — led him to start and lead two genre-fluid bands. His lyrical work aims to dissect the critical moments when our humanity is both at its best and its worst, and catalogue all the ways our emotions make and break us.</p>
+        <p>As the face of a band in a predominantly white genre, his work also questions the myth of the model minority and what it means to take up space in rooms that weren't built for you.</p>
+      </div>
+      <div class="bands-grid">
+        <div class="band-card">
+          <div class="band-name">tenmonthsummer</div>
+          <div class="band-years">2023 – Present</div>
+          <div class="band-desc">Nishat's current band, formed in 2023. Genre-fluid and emotionally direct, tenmonthsummer continues the work of excavating the moments that define us.</div>
+          <a class="band-link" href="https://www.instagram.com/tenmonthsummerband/" target="_blank" rel="noopener">Follow on Instagram &rarr;</a>
+        </div>
+        <div class="band-card">
+          <div class="band-name">Ocean Glass</div>
+          <div class="band-years">2012 – Present</div>
+          <div class="band-desc">Founded in 2012, Ocean Glass built a devoted Chicago following through years of relentless shows and social campaigns that led to multiple large venue sellouts.</div>
+          <div class="band-venues">
+            <div class="band-venue">House of Blues — sold out</div>
+            <div class="band-venue">Bottom Lounge — sold out</div>
+            <div class="band-venue">Subterranean — sold out</div>
+          </div>
+          <a class="band-link" href="https://www.facebook.com/oceanglassband" target="_blank" rel="noopener">Find on Facebook &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORKSHOPS -->
+  <section class="workshops" aria-labelledby="workshops-heading">
+    <div class="section-label" id="workshops-heading">Workshops</div>
+    <div>
+      <div class="workshop-feature" style="margin-bottom: 2px;">
+        <div class="workshop-title">The Poetry Workshop</div>
+        <div class="workshop-body">A 30 minute–1 hour module-based workshop series that brings participants closer to the heart of language, while also opening up the possibilities of their own words and stories. Whether it's for business or for pleasure, the participant's pen will get sharper.</div>
+        <a class="workshop-link" href="index.html#contact">Book a workshop &rarr;</a>
+      </div>
+      <div class="workshop-feature">
+        <div class="workshop-title">The Storycooking Workshop</div>
+        <div class="workshop-body">A 2–3 hour module-based presentation that teaches and equips participants to tell better stories and tap into their emotional power to connect with others. Originally developed by Nishat Ahmed, the workshop has been delivered to organizations, universities, and professional groups across the country.</div>
+        <a class="workshop-link" href="index.html#contact">Book a workshop &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEDX -->
+  <section class="tedx" aria-labelledby="tedx-heading">
+    <div class="section-label" id="tedx-heading">Speaking</div>
+    <div class="tedx-feature">
+      <div class="tedx-text">
+        <div class="tedx-title">TEDxUIUC</div>
+        <div class="tedx-body">Chosen to share the beginnings of his poetic journey at TEDxUIUC, Nishat spoke on the power of story and what it means to carry multiple identities in a single voice. The talk remains one of the most personal things he's put on record.</div>
+        <a class="tedx-link" href="https://www.youtube.com/watch?t=&v=31ojbLK0vU4" target="_blank" rel="noopener">Watch the talk &rarr;</a>
+      </div>
+      <div class="tedx-badge">
+        <div class="tedx-badge-label">TEDx Speaker</div>
+        <div class="tedx-badge-name">University of Illinois<br>Urbana-Champaign</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-strip">
+    <div class="cta-text">Book a reading, show, or workshop.</div>
+    <div>
+      <a class="btn btn-light" href="index.html#contact">Get in touch</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-logo">Nishat Ahmed</div>
+    <ul class="footer-links">
+      <li><a href="mailto:nishatahmedpoetry@gmail.com">Email</a></li>
+      <li><a href="https://www.linkedin.com/in/nishat-ahmed-writer/" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="http://instagram.com/thenishfish" target="_blank" rel="noopener">Instagram</a></li>
+      <li><a href="https://medium.com/@thenishfish" target="_blank" rel="noopener">Medium</a></li>
+    </ul>
+    <div class="footer-copy">&copy; 2026 Nishat Ahmed</div>
+  </footer>
+
+</body>
+</html>

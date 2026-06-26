@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nishat Ahmed — Poet, Writer, Strategist</title>
+  <meta name="description" content="Nishat Ahmed is an award-winning Bangladeshi-American poet, content strategist, and creative based in Chicago.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --green: #006A4E;
+      --green-dark: #00503a;
+      --red: #DA291C;
+      --parchment: #f5f0e8;
+      --parchment-mid: #e8e2d4;
+      --rule: #c5bfaa;
+      --text-primary: #1e1e18;
+      --text-body: #2a2820;
+      --text-muted: #7a7060;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'Source Serif 4', Georgia, serif;
+      --font-ui: 'Inter', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-ui);
+      background: var(--parchment);
+      color: var(--text-primary);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--red);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    /* ── NAV ── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--parchment);
+      border-bottom: 0.5px solid var(--rule);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 48px;
+    }
+
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-primary);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+    }
+
+    .nav-logo:hover { text-decoration: none; color: var(--green); }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 32px;
+    }
+
+    .nav-links a {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-body);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover {
+      color: var(--red);
+      text-decoration: none;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 580px;
+    }
+
+    .hero-photo {
+      overflow: hidden;
+      background: var(--parchment-mid);
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+
+    .hero-photo-placeholder {
+      width: 100%;
+      height: 100%;
+      min-height: 580px;
+      background: #b8c4aa;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .hero-photo-placeholder span {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #3a4a32;
+      opacity: 0.6;
+    }
+
+    .hero-text {
+      padding: 64px 56px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hero-eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 18px;
+    }
+
+    .hero-name {
+      font-family: var(--font-display);
+      font-size: 60px;
+      font-weight: 700;
+      line-height: 1.0;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+    }
+
+    .hero-name em {
+      font-style: italic;
+      color: var(--green);
+    }
+
+    .hero-tagline {
+      font-family: var(--font-body);
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.8;
+      color: var(--text-body);
+      margin-bottom: 36px;
+      max-width: 360px;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      font-family: var(--font-ui);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 13px 24px;
+      cursor: pointer;
+      transition: opacity 0.15s;
+      text-decoration: none;
+    }
+
+    .btn:hover { opacity: 0.85; text-decoration: none; }
+
+    .btn-primary {
+      background: var(--green);
+      color: var(--parchment);
+      border: 1.5px solid var(--green);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--red);
+      border: 1.5px solid var(--red);
+    }
+
+    /* ── DIVIDER ── */
+    hr.rule {
+      border: none;
+      border-top: 0.5px solid var(--rule);
+    }
+
+    /* ── ABOUT ── */
+    .about {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 48px;
+      padding: 72px 48px;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--green);
+      padding-top: 6px;
+    }
+
+    .about-body {
+      font-family: var(--font-body);
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.85;
+      color: var(--text-body);
+    }
+
+    .about-body p + p { margin-top: 1.25em; }
+
+    .about-body a { color: var(--red); }
+
+    /* ── BOOKS ── */
+    .books {
+      background: var(--parchment-mid);
+      padding: 64px 48px;
+    }
+
+    .books-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 36px;
+    }
+
+    .books-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .book-card {
+      background: var(--parchment);
+      padding: 28px;
+      display: flex;
+      gap: 22px;
+      align-items: flex-start;
+    }
+
+    .book-spine {
+      width: 68px;
+      height: 92px;
+      background: var(--green);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px;
+    }
+
+    .book-spine-2 { background: var(--green-dark); }
+
+    .book-spine span {
+      font-family: var(--font-display);
+      font-size: 9px;
+      font-style: italic;
+      color: #c0d8c0;
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    .book-meta { flex: 1; }
+
+    .book-title {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-style: italic;
+      font-weight: 500;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+
+    .book-press {
+      font-family: var(--font-ui);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .book-card a {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--red);
+      border-bottom: 1px solid var(--red);
+      padding-bottom: 1px;
+    }
+
+    /* ── PRAISE ── */
+    .praise {
+      padding: 72px 48px;
+    }
+
+    .praise-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-top: 36px;
+    }
+
+    .praise-item {
+      border-left: 2px solid var(--green);
+      padding-left: 24px;
+    }
+
+    .praise-item blockquote {
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-style: italic;
+      font-weight: 400;
+      line-height: 1.85;
+      color: var(--text-body);
+      margin-bottom: 12px;
+    }
+
+    .praise-item cite {
+      font-family: var(--font-ui);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      font-style: normal;
+    }
+
+    /* ── PRAISE FOR ME (funny quotes) ── */
+    .praise-me {
+      background: var(--parchment-mid);
+      padding: 64px 48px;
+    }
+
+    .praise-me-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 28px;
+      margin-top: 36px;
+    }
+
+    .praise-me-item {
+      padding: 24px;
+      background: var(--parchment);
+    }
+
+    .praise-me-item blockquote {
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-style: italic;
+      font-weight: 400;
+      line-height: 1.8;
+      color: var(--text-body);
+      margin-bottom: 12px;
+    }
+
+    .praise-me-item cite {
+      font-family: var(--font-ui);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      font-style: normal;
+    }
+
+    /* ── SERVICES ── */
+    .services {
+      background: var(--green);
+      padding: 72px 48px;
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .services .section-label {
+      color: #a8d4c0;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+
+    .service-item {
+      padding: 15px 0;
+      border-bottom: 0.5px solid rgba(255,255,255,0.15);
+      font-family: var(--font-body);
+      font-size: 16px;
+      font-weight: 400;
+      color: #e8f4ee;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .service-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #a8d4c0;
+      flex-shrink: 0;
+    }
+
+    /* ── CONTACT STRIP ── */
+    .contact-strip {
+      padding: 72px 48px;
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .contact-intro {
+      font-family: var(--font-body);
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.8;
+      color: var(--text-body);
+      margin-bottom: 32px;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      max-width: 560px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      font-family: var(--font-ui);
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--text-primary);
+      background: var(--parchment-mid);
+      border: 0.5px solid var(--rule);
+      padding: 13px 16px;
+      width: 100%;
+      outline: none;
+      border-radius: 0;
+      -webkit-appearance: none;
+    }
+
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+      color: var(--text-muted);
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: var(--green);
+    }
+
+    .contact-form textarea {
+      resize: vertical;
+      min-height: 140px;
+    }
+
+    .contact-form button {
+      font-family: var(--font-ui);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 14px 28px;
+      background: var(--green);
+      color: var(--parchment);
+      border: none;
+      cursor: pointer;
+      align-self: flex-start;
+      transition: opacity 0.15s;
+    }
+
+    .contact-form button:hover { opacity: 0.85; }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: #1a2a22;
+      padding: 32px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-logo {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-style: italic;
+      font-weight: 500;
+      color: #7aaa8a;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #7aaa8a;
+      text-decoration: none;
+    }
+
+    .footer-links a:hover { color: var(--red); text-decoration: none; }
+
+    .footer-copy {
+      font-size: 11px;
+      color: #4a6a54;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .nav { padding: 16px 24px; }
+      .nav-links { gap: 18px; }
+      .nav-links a { font-size: 10px; }
+
+      .hero { grid-template-columns: 1fr; }
+      .hero-photo { min-height: 320px; }
+      .hero-photo-placeholder { min-height: 320px; }
+      .hero-text { padding: 40px 24px; }
+      .hero-name { font-size: 44px; }
+
+      .about,
+      .contact-strip,
+      .services { grid-template-columns: 1fr; gap: 28px; padding: 48px 24px; }
+
+      .books { padding: 48px 24px; }
+      .books-grid { grid-template-columns: 1fr; }
+
+      .praise { padding: 48px 24px; }
+      .praise-grid { grid-template-columns: 1fr; }
+
+      .praise-me { padding: 48px 24px; }
+      .praise-me-grid { grid-template-columns: 1fr; }
+
+      .services-grid { grid-template-columns: 1fr; }
+
+      .form-row { grid-template-columns: 1fr; }
+
+      .footer { padding: 24px; flex-direction: column; align-items: flex-start; gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <a class="nav-logo" href="index.html">Nishat Ahmed</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="professional.html">Professional</a></li>
+      <li><a href="personal.html">Personal</a></li>
+      <li><a href="#books">Books</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" aria-label="Introduction">
+    <div class="hero-photo">
+      <!-- Replace the placeholder below with your actual photo:
+           1. Save your photo as "nish.jpg" in the same folder as this file
+           2. Delete the div.hero-photo-placeholder
+           3. Uncomment the img tag below -->
+      <!-- <img src="nish.jpg" alt="Nishat Ahmed"> -->
+      <div class="hero-photo-placeholder" aria-hidden="true">
+        <span>Your photo here</span>
+      </div>
+    </div>
+    <div class="hero-text">
+      <p class="hero-eyebrow">Poet &middot; Writer &middot; Strategist</p>
+      <h1 class="hero-name">Nishat<br><em>Ahmed</em></h1>
+      <p class="hero-tagline">Award-winning Bangladeshi-American poet, content strategist, and creative — based in Chicago.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="professional.html">View my work</a>
+        <a class="btn btn-outline" href="#books">Order my books</a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- ABOUT -->
+  <section class="about" id="about" aria-labelledby="about-heading">
+    <div class="section-label" id="about-heading">About</div>
+    <div class="about-body">
+      <p>Nishat Ahmed is a Bangladeshi-American writer and musician based in Chicago. After earning a BA in Creative Writing and a BS in Psychology from the University of Illinois at Urbana-Champaign, he went on to complete his MFA in Creative Writing (Poetry) from Old Dominion University, where his thesis was directed by former Poet Laureate of Virginia, <a href="https://blueflowerarts.com/artist/tim-seibles/">Tim Seibles</a>.</p>
+      <p>In the professional world, Nishat has taken the helm as Editor-in-Chief of one of Chicago's most popular culture magazines, consulted on creative writing at one of the Big 4 firms, and now works as a content strategist and writer. He also created the <strong>Storycooking Workshop</strong> — a module-based program that teaches participants to tell better stories and tap into emotional connection.</p>
+      <p>In the creative world, his writing falls at the intersections of grief, race, trauma, mental health, loss, love, and music. His bands — <a href="https://www.facebook.com/oceanglassband">Ocean Glass</a> and <a href="https://www.instagram.com/tenmonthsummerband/">tenmonthsummer</a> — have sold out Chicago's House of Blues, Bottom Lounge, and Subterranean.</p>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- BOOKS -->
+  <section class="books" id="books" aria-labelledby="books-heading">
+    <div class="books-header">
+      <div class="section-label" id="books-heading">Books</div>
+    </div>
+    <div class="books-grid">
+      <div class="book-card">
+        <div class="book-spine">
+          <span>Field Guide for End Days</span>
+        </div>
+        <div class="book-meta">
+          <div class="book-title">Field Guide for End Days</div>
+          <div class="book-press">Finishing Line Press &middot; 2020</div>
+          <a href="https://www.indiebound.org/book/9781646622269" target="_blank" rel="noopener">Order now &rarr;</a>
+        </div>
+      </div>
+      <div class="book-card">
+        <div class="book-spine book-spine-2">
+          <span>Brown Boy</span>
+        </div>
+        <div class="book-meta">
+          <div class="book-title">Brown Boy</div>
+          <div class="book-press">Porkbelly Press</div>
+          <a href="https://porkbellypress.com/poetry/brown" target="_blank" rel="noopener">Order now &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRAISE FOR THE WORK -->
+  <section class="praise" aria-labelledby="praise-heading">
+    <div class="section-label" id="praise-heading">Praise for the work</div>
+    <div class="praise-grid">
+      <div class="praise-item">
+        <blockquote>"Like many of the attendants and psychopomps encountered in myth and literature, the speaker in <em>Field Guide for End Days</em> wastes no time asking readers: 'Assalamualaikum. Why have you come?' These poems give us the gift of our names before our mothers named us. They give us amulets against forgetting."</blockquote>
+        <cite>— Luisa A. Igloria, author of <em>What is Left of Wings, I Ask</em></cite>
+      </div>
+      <div class="praise-item">
+        <blockquote>"A collection of poems is a long look into another's eyes and, if we are unafraid, a daring look into our own. <em>Field Guide for End Days</em> is a desperate and beautiful book that asks us not to blink when facing those things that define our time on Earth — love, family, history, death."</blockquote>
+        <cite>— Tim Seibles, author of <em>One Turn Around The Sun</em></cite>
+      </div>
+      <div class="praise-item">
+        <blockquote>"A lovesong for the missed and missing, the everpresent and undersung. In this collection Ahmed takes what our ancestors have given us and lets it rest on our tongue."</blockquote>
+        <cite>— Remica Bingham-Risher, author of <em>What We Ask of Flesh</em></cite>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- PRAISE FOR ME -->
+  <section class="praise-me" aria-labelledby="praise-me-heading">
+    <div class="section-label" id="praise-me-heading">Praise for me</div>
+    <div class="praise-me-grid">
+      <div class="praise-me-item">
+        <blockquote>"He is very talented. Please hire him, he needs the health insurance."</blockquote>
+        <cite>— My mom</cite>
+      </div>
+      <div class="praise-me-item">
+        <blockquote>"Great hair, the truest of true love poems, doesn't really do that poet voice thing — only when it counts."</blockquote>
+        <cite>— Ariel Paige, Parisian Poet extraordinaire</cite>
+      </div>
+      <div class="praise-me-item">
+        <blockquote>"Nishat is an outstanding writer and a better person. The amplification of his voice would make the world a better place."</blockquote>
+        <cite>— Michael Morrell, future president of America</cite>
+      </div>
+      <div class="praise-me-item">
+        <blockquote>"He's the Pete Wentz of his band."</blockquote>
+        <cite>— Kelsey Wort, best friend and author of <em>Gemini</em></cite>
+      </div>
+      <div class="praise-me-item">
+        <blockquote>"In a world full of raisins, Nishat is a juicy pomegranate."</blockquote>
+        <cite>— Alexander Carson, Dave Matthews Band and Jeppson's Malört enthusiast</cite>
+      </div>
+      <div class="praise-me-item">
+        <blockquote>"Great friend, great writer, and once-great (still great?) Tumblr-er."</blockquote>
+        <cite>— Morgan Birck, New Jersey Appellate Public Defender</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" aria-labelledby="services-heading">
+    <div class="section-label" id="services-heading">Services</div>
+    <div class="services-grid">
+      <div class="service-item"><span class="service-dot" aria-hidden="true"></span>Content writing</div>
+      <div class="service-item"><span class="service-dot" aria-hidden="true"></span>Editing &amp; proofreading</div>
+      <div class="service-item"><span class="service-dot" aria-hidden="true"></span>Brand &amp; product strategy</div>
+      <div class="service-item"><span class="service-dot" aria-hidden="true"></span>Speaking engagements</div>
+      <div class="service-item"><span class="service-dot" aria-hidden="true"></span>Craft &amp; writing workshops</div>
+      <div class="service-item"><span class="service-dot" aria-hidden="true"></span>Musical performances</div>
+      <div class="service-item"><span class="service-dot" aria-hidden="true"></span>Consulting services</div>
+      <div class="service-item"><span class="service-dot" aria-hidden="true"></span>Reading performances</div>
+      <div class="service-item"><span class="service-dot" aria-hidden="true"></span>Personal development seminars</div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-strip" id="contact" aria-labelledby="contact-heading">
+    <div class="section-label" id="contact-heading">Contact</div>
+    <div>
+      <p class="contact-intro">Available for bookings, commissions, collaborations, and whatever else you might need. Get in touch.</p>
+      <!-- FORMSPREE: Replace YOUR_FORM_ID below with your actual Formspree form ID -->
+      <!-- Sign up free at formspree.io, create a new form, and paste the ID here -->
+      <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="form-row">
+          <input type="text" name="name" placeholder="Your name" required>
+          <input type="email" name="email" placeholder="Your email" required>
+        </div>
+        <input type="text" name="subject" placeholder="What's this about?">
+        <textarea name="message" placeholder="Your message" required></textarea>
+        <button type="submit">Send message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-logo">Nishat Ahmed</div>
+    <ul class="footer-links">
+      <li><a href="mailto:nishatahmedpoetry@gmail.com">Email</a></li>
+      <li><a href="https://www.linkedin.com/in/nishat-ahmed-writer/" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="http://instagram.com/thenishfish" target="_blank" rel="noopener">Instagram</a></li>
+      <li><a href="https://medium.com/@thenishfish" target="_blank" rel="noopener">Medium</a></li>
+    </ul>
+    <div class="footer-copy">&copy; 2026 Nishat Ahmed</div>
+  </footer>
+
+</body>
+</html>
